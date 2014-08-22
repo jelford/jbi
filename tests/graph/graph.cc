@@ -1,5 +1,6 @@
 #include <iostream>
 #include <boost/test/unit_test.hpp>
+#include <memory>
 
 #include "graph.hpp"
 
@@ -11,7 +12,7 @@ BOOST_AUTO_TEST_SUITE(test_suite_one)
 BOOST_AUTO_TEST_CASE(test1)
 {
     Graph g;
-    BOOST_REQUIRE(1 == 2);
+    g.insert(NULL);
 }
 
 BOOST_AUTO_TEST_SUITE_END()

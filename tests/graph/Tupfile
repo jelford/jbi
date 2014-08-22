@@ -1,6 +1,6 @@
 include_rules
 
-LIBS += $(SRC)/graph
-INCLUDES += $(SRC)/graph
+CFLAGS += -shared
+INCLUDES += -I$(SRC)/graph
 
-: foreach *.cc |> g++ $(CFLAGS) -L$(LIBS) -I$(INCLUDES) -fPIC -shared %f -o %o |> test_%B.so ../<tests>
+: foreach *.cc | $(SRC)/<libgraph> |> g++ $(CFLAGS) $(INCLUDES) %f $(SRC)/graph/libgraph.a -o %o |> test_%B.so ../<tests>

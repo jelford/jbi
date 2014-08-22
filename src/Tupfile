@@ -1,7 +1,9 @@
 include_rules
 
+INCLUDES += -Igraph
+
 : foreach *.cc |> !cc |>
-: *.o | <libs> |> g++ -o %o %f |> jbi <main>
+: *.o | <libs> <libgraph> |> g++ $(CFLAGS) -o %o %f **/*.a |> jbi <main>
 
 
 .gitignore
