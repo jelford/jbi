@@ -9,8 +9,7 @@ than a vanilla maven build.
 
 ## Status
 
-This project is _not_ ready for prime time. You're welcome to give it a spin,
-but expect very basic functionality to be missing or buggy.
+This project is _not_ ready for prime time. You will not be able to build your project.
 
 ## Usage
 
@@ -31,4 +30,13 @@ or spend lots of time configuring it. The aim is to be 100% maven compatible.
 on-demand.
 
 `JBI` attempts to bring the "bottom-up" approach to build from [tup](gittup.org) 
-to the Java world. 
+to the Java world.
+
+## Build
+
+`JBI` uses [tup](gittup.org) - which you can fork and build 
+[from github](github.com/gittup/tup.git). Once you've got that running, you can
+just do `tup` from the root directory. You'll need `boost` headers and the
+unit testing library.
+
+A test runner should be built under `tests`.
