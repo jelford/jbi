@@ -1,7 +1,6 @@
-CFLAGS += -Wall
+include_rules
 
-
-: foreach *.cc |> g++ $(CFLAGS) -c %f -o %o |> %B.o
+: foreach *.cc |> !cc |>
 : *.o |> g++ -o %o %f |> jbi
 
 
