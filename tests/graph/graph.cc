@@ -1,13 +1,16 @@
 #include <iostream>
 #include <boost/test/unit_test.hpp>
 
+#include "graph.hpp"
+
 using namespace std;
+using namespace jbi_graph;
 
 BOOST_AUTO_TEST_SUITE(test_suite_one)
 
 BOOST_AUTO_TEST_CASE(test1)
 {
-    cout << "hello from tests1" << endl;
+    Graph g;
 }
 
 BOOST_AUTO_TEST_SUITE_END()

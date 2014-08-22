@@ -1,4 +1,4 @@
 include_rules
 .gitignore
 
-: bootstrap-dependencies.py |> ./%f && touch %o |> $(LIB_DIR)/dependencies-bootstrap-marker <libs>
+: bootstrap-dependencies.py |> ./%f && touch %o |> $(LIB_MARKER)
