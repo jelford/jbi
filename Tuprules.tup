@@ -1,6 +1,8 @@
 LIB_DIR = $(TUP_CWD)/lib
 LIBS = $(LIB_DIR)/dependencies-bootstrap-marker
+CFLAGS += -std=c++11
 CFLAG += -Wall
-CFLAGS += -I$(LIB_DIR)
+CFLAGS += -L$(LIB_DIR)
 
 !cc = |> g++ $(CFLAGS) -c %f -o %o |> %B.o
+!ar = |> ar crs %o %f |>
