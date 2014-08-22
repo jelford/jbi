@@ -1,3 +1,7 @@
-#define BOOST_TEST_MODULE "C++ Unit Tests for jbi"
-#define BOOST_TEST_DYN_LINK
-#include <boost/test/unit_test.hpp>
+#include "gtest/gtest.h"
+
+int main(int argc, char** argv) 
+{
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}

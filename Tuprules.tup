@@ -6,7 +6,7 @@ CFLAGS += -Wall
 CFLAGS += -fPIC
 CFLAGS += -L$(LIB_DIR)
 CFLAGS += -pthread
-INCLUDES = -I$(LIB_DIR)/include
+CFLAGS += -I$(LIB_DIR)/include
 
 !cc = |> g++ $(CFLAGS) $(INCLUDES) -c %f -o %o |> %B.o
 !ar = |> ar crs %o %f |>

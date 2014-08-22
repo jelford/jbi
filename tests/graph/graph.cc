@@ -1,7 +1,7 @@
 #include <iostream>
-#include <boost/test/unit_test.hpp>
 #include <memory>
 
+#include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
 #include "graph.hpp"
@@ -19,9 +19,7 @@ namespace {
     };
 }
 
-BOOST_AUTO_TEST_SUITE(test_suite_one)
-
-BOOST_AUTO_TEST_CASE(test1)
+TEST(A, B)
 {
     Graph g;
     MockFact* f = new MockFact();
@@ -33,4 +31,3 @@ BOOST_AUTO_TEST_CASE(test1)
     f_ptr.reset();
 }
 
-BOOST_AUTO_TEST_SUITE_END()
