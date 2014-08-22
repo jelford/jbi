@@ -1,0 +1,5 @@
+CFLAGS += -lboost_unit_test_framework
+
+: test_main.cc |> g++ $(CFLAGS) -o %o %f |> tests
+
+.gitignore
