@@ -19,6 +19,17 @@ namespace {
     };
 }
 
+TEST(Graph, Yields_Ascending_ids)
+{
+    Graph g;
+    auto f = new MockFact();
+    auto f_ptr = shared_ptr<Fact>(f);
+    EXPECT_CALL(*f, put_in(A<Graph&>())).Times(AtLeast(1));
+
+    auto i = g.insert(f_ptr);
+    ASSERT_LT(i, g.insert(f_ptr));
+}
+
 TEST(Graph, Notifies_Fact_Of_Insertion_Into_Knowledge_Graph)
 {
     Graph g;
@@ -28,6 +39,5 @@ TEST(Graph, Notifies_Fact_Of_Insertion_Into_Knowledge_Graph)
     EXPECT_CALL(*f, put_in(A<Graph&>())).Times(AtLeast(1));
     g.insert(f_ptr);
 
-    f_ptr.reset();
 }
 
