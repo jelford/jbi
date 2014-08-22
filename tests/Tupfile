@@ -1,7 +1,6 @@
 include_rules
 CFLAGS += -lboost_unit_test_framework
 
-
-: test_main.cc |> g++ $(CFLAGS) -o %o %f |> tests
+: test_main.cc | <libs> <main> |> g++ $(CFLAGS) -o %o %f |> tests
 
 .gitignore

@@ -1,7 +1,7 @@
 include_rules
 
 : foreach *.cc |> !cc |>
-: *.o |> g++ -o %o %f |> jbi
+: *.o | <libs> |> g++ -o %o %f |> jbi <main>
 
 
 .gitignore
