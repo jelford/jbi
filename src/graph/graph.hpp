@@ -15,11 +15,12 @@ typedef int NodeKey;
 class Graph
 {
     private:
-        std::vector<Fact_ptr> facts;
         std::unique_ptr<GraphPimpl> pimpl;
 
     public:
-        NodeKey insert(Fact_ptr new_fact);
+        NodeKey insert(Fact_ptr);
+        void process();
+        void dirty(NodeKey);
         Graph();
 
         ~Graph();
