@@ -19,7 +19,7 @@ namespace {
     };
 }
 
-TEST(A, B)
+TEST(Graph, Notifies_Fact_Of_Insertion_Into_Knowledge_Graph)
 {
     Graph g;
     MockFact* f = new MockFact();

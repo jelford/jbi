@@ -3,7 +3,6 @@ LIB_MARKER = $(LIB_DIR)/dependencies-bootstrap-marker
 SRC = $(TUP_CWD)/src
 CFLAGS += -std=c++11
 CFLAGS += -Wall
-CFLAGS += -fPIC
 CFLAGS += -L$(LIB_DIR)
 CFLAGS += -pthread
 CFLAGS += -I$(LIB_DIR)/include

@@ -1,7 +1,5 @@
 include_rules
 include ../Testrules.tup
 
-CFLAGS += -shared
-INCLUDES += -I$(SRC)/graph
 
-: foreach *.cc | $(SRC)/<libgraph> |> g++ $(CFLAGS) $(INCLUDES) $(TEST_LIBS) %f $(SRC)/graph/libgraph.a  -o %o |> test_%B.so ../<tests>
+: foreach *.cc | $(SRC)/<libgraph> |> g++ -c $(CFLAGS) $(TEST_LIBS) %f $(MODULES_UNDER_TEST) -o %o |> test_%B.o ../<tests>

@@ -1,2 +1,5 @@
 TEST_LIBS += -lgmock
 TEST_LIBS += -lgtest
+
+CFLAGS += -I$(SRC)/graph
+MODULES_UNDER_TEST += $(SRC)/graph/libgraph.a
