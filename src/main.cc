@@ -10,5 +10,5 @@ int main(int const argc, char const * const * const argv)
 {
     cout << "Hello, world" << endl;
     Graph g;
-    g.insert(shared_ptr<Fact>(new Fact()));
+    g.insert(shared_ptr<Fact>(NULL));
 }

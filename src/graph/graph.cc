@@ -8,4 +8,5 @@ using namespace jbi_graph;
 void Graph::insert(Fact_ptr fact)
 {
     cout << "Graph::insert" << endl;
+    //fact->put_in(*this);
 }

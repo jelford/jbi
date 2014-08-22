@@ -1,0 +1,2 @@
+TEST_LIBS += -lgmock
+TEST_LIBS += -lgtest
