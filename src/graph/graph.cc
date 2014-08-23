@@ -2,10 +2,12 @@
 #include <atomic>
 #include <map>
 
+#include "preconditions.hpp"
 #include "graph.hpp"
 
 using namespace std;
 using namespace jbi_graph;
+using namespace jbi_preconditions;
 
 class jbi_graph::GraphPimpl
 {
@@ -24,31 +26,22 @@ class jbi_graph::GraphPimpl
 
     void process()
     {
-        cout << "Processing " << dirty_keys.size() << "!" << endl;
-        for (auto dirty_truth : dirty_keys)
+        for (auto dirty_truth : dirty_nodes)
         {
-            cout << dirty_truth << endl;
-            auto f = facts[dirty_truth];
-            cout << f << endl;
-            f->evaluate();
+            dirty_truth->evaluate();
         }
     }
 
     void dirty(NodeKey nk)
     {
-        cout << "Dirtying: " << nk << endl;
-        if (facts.count(nk) == 0)
-        {
-            throw "can't dirty a key we don't know";
-        }
-        dirty_keys.push_back(nk);
+        dirty_nodes.push_back(get(facts, nk));
     }
 
     GraphPimpl(Graph& instance) : owner(instance), node_count(0)
     {
     }
 
-    vector<NodeKey> dirty_keys;
+    vector<Fact_ptr> dirty_nodes;
     map<NodeKey, Fact_ptr> facts;
 
     public:
@@ -60,7 +53,6 @@ Graph::~Graph() {}
 
 NodeKey Graph::insert(Fact_ptr fact)
 {
-    cout << "Graph::insert" << endl;
     return pimpl->insert(fact);
 }
 

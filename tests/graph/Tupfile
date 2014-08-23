@@ -2,4 +2,4 @@ include_rules
 include ../Testrules.tup
 
 
-: foreach *.cc | $(SRC)/<libgraph> |> g++ -c $(CFLAGS) $(TEST_LIBS) %f $(MODULES_UNDER_TEST) -o %o |> test_%B.o ../<tests>
+: foreach *.cc | $(SRC)/graph/libgraph.a |> g++ -c $(CFLAGS) $(TEST_LIBS) %f -o %o |> test_%B.o ../<tests>

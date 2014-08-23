@@ -20,6 +20,12 @@ namespace {
     };
 }
 
+TEST(Graph, Throws_Exception_When_Dirtying_Non_Existent_Key)
+{
+    Graph g;
+    ASSERT_ANY_THROW(g.dirty(100));
+}
+
 TEST(Graph, Process_Activates_Changed_Nodes)
 {
     Graph g;

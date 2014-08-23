@@ -3,3 +3,8 @@ TEST_LIBS += -lgtest
 
 CFLAGS += -I$(SRC)/graph
 MODULES_UNDER_TEST += $(SRC)/graph/libgraph.a
+
+CFLAGS += -I$(SRC)/preconditions
+MODULES_UNDER_TEST += $(SRC)/preconditions/libpreconditions.a
+
+

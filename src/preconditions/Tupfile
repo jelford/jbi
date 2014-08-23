@@ -1,0 +1,5 @@
+include_rules
+
+
+: foreach *.cc |> !cc |>
+: *.o |> !ar |> libpreconditions.a ../<internal_libs>

@@ -3,6 +3,6 @@ include Testrules.tup
 
 CFLAGS += -lboost_unit_test_framework
 
-: test_main.cc | <libs> <main> <tests> |> g++ $(CFLAGS)  -o %o test_main.cc **/test_*.o $(TEST_LIBS) $(MODULES_UNDER_TEST) |> run_tests
+: test_main.cc | <libs> $(SRC)/<main> <tests> $(MODULES_UNDER_TEST) |> g++ $(CFLAGS)  -o %o test_main.cc **/test_*.o $(TEST_LIBS) $(MODULES_UNDER_TEST) |> run_tests
 
 .gitignore

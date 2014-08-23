@@ -1,5 +1,6 @@
 include_rules
 
+CFLAGS += -I../preconditions
 
-: foreach *.cc |> !cc |>
-: *.o |> !ar |> libgraph.a ../<libgraph>
+: foreach *.cc | ../preconditions/*.hpp |> !cc |>
+: *.o |> !ar |> libgraph.a ../<internal_libs>

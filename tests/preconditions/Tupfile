@@ -1,0 +1,5 @@
+include_rules
+include ../Testrules.tup
+
+
+: foreach *.cc | $(SRC)/preconditions/libpreconditions.a |> g++ -c $(CFLAGS) $(TEST_LIBS) %f -o %o |> test_%B.o ../<tests>
