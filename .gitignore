@@ -1,5 +1,6 @@
 .tup
 lib
+tags
 
 # curl "http://www.gitignore.io/api/c++,vim"
 # Created by http://www.gitignore.io
