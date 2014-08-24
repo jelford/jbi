@@ -36,7 +36,8 @@ to the Java world.
 
 `JBI` uses [tup](gittup.org) - which you can fork and build 
 [from github](github.com/gittup/tup.git). Once you've got that running, you can
-just do `tup` from the root directory. You'll need `boost` headers and the
-unit testing library.
-
+just do `tup` from the root directory. You'll need `boost` (`-devel` packages),
+plus `gtest` and `gmock` for testing (put the build static libraries for these
+into the `lib` directory).
+ 
 A test runner should be built under `tests`.
