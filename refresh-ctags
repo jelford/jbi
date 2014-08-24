@@ -1,0 +1,12 @@
+#! /usr/bin/sh
+set -e 
+
+for changed_file in `git diff-tree --no-commit-id --name-only -r HEAD`
+do
+    echo $changed_file
+    ack --no-filter -v "$changed_file" tags > new_tags
+    ctags -o new_tags -a $changed_file
+    mv new_tags tags
+done
+
+
