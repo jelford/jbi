@@ -21,7 +21,7 @@ do when we build a large code base.
 * `JBI` is not a new compiler. Under the hood, `javac` is invoked directly
 * `JBI` is not going to speed up a clean build. At the end of the day, you
 are still going to have to compile all your `java` files.
-* `JBI` is not going to ask you to through away your existing build confiuration
+* `JBI` is not going to ask you to throw away your existing build confiuration
 or spend lots of time configuring it. The aim is to be 100% maven compatible.
 
 ### What JBI is
